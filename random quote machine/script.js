@@ -221,7 +221,16 @@ function generateQuote() {
     let quotelen = QUOTEBANK.length;
     let randomIndex = Math.floor(Math.random() * quotelen);
     let randomQuote = QUOTEBANK[randomIndex];
-    document.getElementById("text").innerText=randomQuote["quote"];
-    document.getElementById("author").innerText=randomQuote["author"];
+    let currentQuote = randomQuote['quote'];
+    let currentAuthor = randomQuote['author'];
+
+
+    let twitterLink = "https://twitter.com/intent/tweet?hashtags=quotes" +
+    encodeURIComponent('"' + currentQuote + '" ' + currentAuthor)
+
+    //text=%22It%E2%80%99s%20not%20the%20years%20in%20your%20life%20that%20count.%20It%E2%80%99s%20the%20life%20in%20your%20years.%22%20Abraham%20Lincoln"
+    document.getElementById("tweet-quote").href = twitterLink;
+    document.getElementById("text").innerText=currentQuote;
+    document.getElementById("author").innerText=currentAuthor;
 }
 
