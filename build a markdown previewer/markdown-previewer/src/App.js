@@ -30,26 +30,26 @@ export default class App extends React.Component{
         </div>
 
         <div className='row mt-4'>
-          <div className='col-6'>
-            <div className='col text-center'>
-              <h4>
+          <div className='col-6 bg-light d-flex flex-column'>
+              <h4 class='text-center my-3'>
                 <Badge className='text-align-center' variant='secondary'>
                   Markdown Input
                 </Badge>
               </h4>
 
-              <textarea 
-                  id='editor'
-                  className='input' 
-                  value={this.state.markdown} 
-                  onChange={(e) => {this.updateMarkdown(e.target.value)}}> 
-              </textarea>
+              <h2 className='d-flex flex-column'>
+                <textarea 
+                    id='editor'
+                    className='input form-control flex-grow-1' 
+                    value={this.state.markdown} 
+                    onChange={(e) => {this.updateMarkdown(e.target.value)}}> 
+                </textarea>
+              </h2>
           </div>
-        </div>
 
-          <div className='col-6'>
-            <div className='col text-center'>
-              <h4> 
+
+          <div className='col-6 bg-secondary'>
+              <h4 class='text-center my-3'> 
                 <Badge className='text-align-center' variant='secondary'>
                   Preview
                 </Badge>
@@ -60,7 +60,6 @@ export default class App extends React.Component{
                   }}
                   ></div>
               </h4>
-            </div>
           </div>
         </div>
       </div>
@@ -110,5 +109,5 @@ And here. | Okay. | I think we get it.
 1. Use just 1s if you want!
 1. And last but not least, let's not forget embedded images:
 
-![React Logo w/ Text](https://goo.gl/Umyytc)
+![React Logo w/ Text](https://www.flickr.com/photos/beaurogers/31833779864/in/photolist-Qv3rFw-34mt9F-a9Cmfy-5Ha3Zi-9msKdv-o3hgjr-hWpUte-4WMsJ1-KUQ8N-deshUb-vssBD-6CQci6-8AFCiD-zsJWT-nNfsgB-dPDwZJ-bn9JGn-5HtSXY-6CUhAL-a4UTXB-ugPum-KUPSo-fBLNm-6CUmpy-4WMsc9-8a7D3T-83KJev-6CQ2bK-nNusHJ-a78rQH-nw3NvT-7aq2qf-8wwBso-3nNceh-ugSKP-4mh4kh-bbeeqH-a7biME-q3PtTf-brFpgb-cg38zw-bXMZc-nJPELD-f58Lmo-bXMYG-bz8AAi-bxNtNT-bXMYi-bXMY6-bXMYv)
 `;
