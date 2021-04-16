@@ -7,7 +7,26 @@
         <script>
             function play(id) {
             try {
-                document.getElementById('display').innerHTML = id;
+                if (id === "q" || id === "Q") {
+                    document.getElementById('display').innerHTML = "Chord_1";
+                } else if (id === 'w' || id === "W") {
+                    document.getElementById('display').innerHTML = "Heater_1";
+                } else if (id === 'e' || id === "E") {
+                    document.getElementById('display').innerHTML = "Heater_2";
+                } else if (id === 'a' || id === "A") {
+                    document.getElementById('display').innerHTML = "Heater_3";
+                } else if (id === 's' || id === "S") {
+                    document.getElementById('display').innerHTML = "Heater_4";
+                } else if (id === 'd' || id === "D") {
+                    document.getElementById('display').innerHTML = "Heater_6";
+                } else if (id === 'z' || id === "Z") {
+                    document.getElementById('display').innerHTML = "Dsc_Oh";
+                } else if (id === 'x' || id === "X") {
+                    document.getElementById('display').innerHTML = "Kick_n_Hat";
+                } else if (id === 'c' || id === "C") {
+                    document.getElementById('display').innerHTML = "RP4_KICK_1";
+                }
+                
                 var audio = document.getElementById(id);
                 audio.play(id);
             } catch (error) {
@@ -47,11 +66,12 @@
     <body>
         <div class="container" id='drum-machine'>
             <h1 class='text-center'>Drum Machine</h1>
-            <div class='card my-3'>
+            <div class='card gap-2 col-6 mx-auto'>
                 <div class='card-body'>
                     <div id='display' class='text-center'></div>
                 </div>
             </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
             <button class='drum-pad btn btn-primary' id='drum-0' onclick='play("Q")'>
                 Q<audio src='https://s3.amazonaws.com/freecodecamp/drums/Chord_1.mp3' class='clip' id='Q'></audio>
             </button>
@@ -79,6 +99,7 @@
             <button class='drum-pad btn btn-primary' id='drum-8' onclick='play("C")'>
                 C<audio src='https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3' class='clip' id='C'></audio>
             </button>
+        </div>
         </div>
     </body>
 
